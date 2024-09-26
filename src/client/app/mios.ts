@@ -4,7 +4,7 @@ import { EventEmitter } from 'eventemitter3';
 import { v4 as uuid } from 'uuid';
 
 import initStore from './store';
-import { apiUrl, version, locale, instanceHost } from './config';
+import { apiUrl, version, locale } from './config';
 import Progress from './common/scripts/loading';
 
 import Err from './common/views/components/connect-failed.vue';
