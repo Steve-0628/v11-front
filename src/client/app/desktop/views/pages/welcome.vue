@@ -31,6 +31,8 @@
 					</div>
 
 					<p class="sign">
+						<span class="signup" @click="signup">{{ $t('@.signup') }}</span>
+						<span class="divider">|</span>
 						<span class="signin" @click="signin">{{ $t('@.signin') }}</span>
 					</p>
 
@@ -134,6 +136,11 @@
 		</article>
 	</modal>
 
+	<modal name="signup" class="modal" width="450px" height="auto" scrollable>
+		<header class="formHeader">{{ $t('@.signup') }}</header>
+		<mk-signup class="form"/>
+	</modal>
+
 	<modal name="signin" class="modal" width="450px" height="auto" scrollable>
 		<header class="formHeader">{{ $t('@.signin') }}</header>
 		<mk-signin class="form"/>
@@ -198,6 +205,10 @@ export default Vue.extend({
 	methods: {
 		about() {
 			this.$modal.show('about');
+		},
+
+		signup() {
+			this.$modal.show('signup');
 		},
 
 		signin() {
@@ -400,6 +411,7 @@ export default Vue.extend({
 							margin 0 16px
 
 						> .signin
+						> .signup
 							cursor pointer
 
 							&:hover
