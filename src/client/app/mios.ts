@@ -135,7 +135,11 @@ export default class MiOS extends EventEmitter {
 				method: 'POST',
 				body: JSON.stringify({
 					i: token
-				})
+				}),
+				cache: 'no-cache',
+				headers: {
+					'Content-Type': 'application/json'
+				}
 			})
 			// When success
 			.then(res => {
@@ -416,7 +420,10 @@ export default class MiOS extends EventEmitter {
 				method: 'POST',
 				body: JSON.stringify(data),
 				credentials: endpoint === 'signin' ? 'include' : 'omit',
-				cache: 'no-cache'
+				cache: 'no-cache',
+				headers: {
+					'Content-Type': 'application/json'
+				}
 			}).then(async (res) => {
 				const body = res.status === 204 ? null : await res.json();
 
